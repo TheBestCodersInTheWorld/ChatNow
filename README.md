@@ -28,6 +28,7 @@ first thing we want to do is navigtate to the project folder so
 enter these commands into the terminal
 
 `cd Desktop`
+
 `cd TSChatNow`
 
 If you run the ls command:
@@ -39,8 +40,11 @@ receive them.
 
 ### Trying to push changes (easy way)
 Enter these commands into your terminal when you are at the *root of your project folder*:
+
 `git add -A`
+
 `git commit -m "<insert some message here that starts with a capital verb>" `
+
 `git push`
 
 ### Try to pull changes (easy way)
@@ -49,6 +53,9 @@ Enter these commands into your terminal when you are at your *root of your proje
 
 ### Pulling changes didn't really work for some reason, force pull (easy way)
 Enter these commands into your terminal when you are at your *root of your project folder*:
+
 `git fetch origin master`
+
 `git reset --hard FETCH_HEAD`
+
 `git clean -df`
