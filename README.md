@@ -4,9 +4,12 @@ TS Chatnow lets users create their own username, chat with friends and family, a
 ## Running 
 
 ### navigate to the correct directory
-cd Desktop
-cd TSChatNow
-cd src
+
+`cd Desktop`
+
+`cd TSChatNow`
+
+`cd src`
 
 you can use cmd + n will get you a new terminal window
 
@@ -25,7 +28,7 @@ python start.py
 ### How can I work with Anthony?
 when you open a new terminal, you'll be at your *root of your project folder*
 first thing we want to do is navigtate to the project folder so 
-enter these commands into the terminal
+enter these commands into the terminal to get to the root of your project folder.
 
 `cd Desktop`
 
