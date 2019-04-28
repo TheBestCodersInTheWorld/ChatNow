@@ -27,7 +27,3 @@ class User(object):
 	def menu(self):
 		print("here are some choices")
 		print("s | show users")
-
-	def make_hotdog(self, hotdog_type):
-		return None
-
