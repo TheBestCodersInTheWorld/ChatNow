@@ -2,6 +2,8 @@ from __future__ import print_function
 import sys
 import time 
 
+SPACE = " "
+
 class User(object):
 	
 	def __init__(self):
@@ -20,6 +22,14 @@ class User(object):
 			# if the user specified show users as an option
 			if cmd == "show users" or cmd == "s":
 				print(app.show_users())
+			elif cmd == "text a user" or cmd == "t":
+				print("The format should be like: @<username> \"<message you want to send>\" ")
+				# TODO: list all the different flag options they can use 
+				# -m => message 
+				message = raw_input("please input a message: ").strip()
+
+
+				print(app.text_user())
 			# TODO: add more possible commands
 
 
@@ -27,3 +37,40 @@ class User(object):
 	def menu(self):
 		print("here are some choices")
 		print("s | show users")
+		print("t | text a user")
+
+
+	# very simplistic but inefficient way of parsing the input
+	def parse_message(self, message_input):
+		username = ""
+		message = ""
+		for index in range(len(message_input)):
+			character = message_input[index]
+			# if the index is 0 and the character is @
+			if index == 0:
+				if character != "@":
+					raise Exception("Error: message format is not correct")
+				else:
+					new_index = index + 1
+					while character != SPACE:
+						character = message_input[new_index]
+						username += character
+						new_index += 1
+			if character == "\"":
+				new_index = index + 1
+				character = message_input[new_index]
+				while character != "\"":
+					character = message_input[new_index]
+					message += character
+					new_index += 1
+		return username, message
+
+
+
+
+
+
+
+
+
+
