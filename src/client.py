@@ -12,9 +12,17 @@ class User(object):
 	def initiate_chatapp(self, app):
 		print("initiated chatapp")
 		username = raw_input("Please input your name: ").strip()
+		self.name = username
 		app.register_user(username)
 
 		while (True):
+			messages = app.receive_messages(self.name)
+			print("\nThese are the messages you got: ")
+			for message in messages:
+				print(message)
+
+			print("\n")
+
 			self.menu()
 			# this takes the input from the user and makes cmd that input result
 			cmd = raw_input("please input a command: ").strip()
@@ -23,13 +31,13 @@ class User(object):
 			if cmd == "show users" or cmd == "s":
 				print(app.show_users())
 			elif cmd == "text a user" or cmd == "t":
-				print("The format should be like: @<username> \"<message you want to send>\" ")
+				# print("The format should be like: @<username> \"<message you want to send>\" ")
 				# TODO: list all the different flag options they can use 
 				# -m => message 
 				message = raw_input("please input a message: ").strip()
+				receiver = raw_input("who are you sending this message to: ").strip()
 
-
-				print(app.text_user())
+				app.send_message(self.name, receiver, message)
 			# TODO: add more possible commands
 
 
