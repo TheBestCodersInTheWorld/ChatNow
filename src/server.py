@@ -23,6 +23,9 @@ class AppServer(object):
 		# TODO: think about how the server can send 
 		# the message to the user
 		# In other words: what should we do in this function
+		# One way the server could send a message to the user is by
+		# connecting to a bluetooth that the server gives out
+		# and sending a message by going through the bluetooth
 
 
 
