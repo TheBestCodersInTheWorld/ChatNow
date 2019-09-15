@@ -18,6 +18,12 @@ class AppServer(object):
 	def show_users(self):
 		return (self.usernames)
 
+	@Pyro4.expose
+	def send_message(self, username, message):
+		# TODO: think about how the server can send 
+		# the message to the user
+		# In other words: what should we do in this function
+
 
 
 def main():
